@@ -17,12 +17,12 @@ HEADERS += \
 ## Either set the IDE_SOURCE_TREE when running qmake,
 ## or set the QTC_SOURCE environment variable, to override the default setting
 isEmpty(IDE_SOURCE_TREE): IDE_SOURCE_TREE = $$(QTC_SOURCE)
-isEmpty(IDE_SOURCE_TREE): IDE_SOURCE_TREE = "/home/sanju/Desktop/qt-creator"
+isEmpty(IDE_SOURCE_TREE): IDE_SOURCE_TREE = $$PWD/../qt-creator
 
 ## Either set the IDE_BUILD_TREE when running qmake,
 ## or set the QTC_BUILD environment variable, to override the default setting
 isEmpty(IDE_BUILD_TREE): IDE_BUILD_TREE = $$(QTC_BUILD)
-isEmpty(IDE_BUILD_TREE): IDE_BUILD_TREE = "/home/sanju/Desktop/build-qtcreator-Desktop-Debug"
+isEmpty(IDE_BUILD_TREE): IDE_BUILD_TREE = $$PWD/../build-qtcreator-Desktop-Debug
 
 ## uncomment to build plugin into user config directory
 ## <localappdata>/plugins/<ideversion>
