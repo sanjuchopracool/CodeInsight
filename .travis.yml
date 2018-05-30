@@ -3,10 +3,12 @@ compiler: gcc
 
 
 before_install:
-  - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
-#  - sudo apt-get update -qq
-  - sudo apt-get remove --purge libqt5webkit5-dev qtdeclarative5-dev
-#  - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+  - sudo add-apt-repository --yes ppa:beineri/opt-qt-5.10.1-trusty
+  - sudo apt-get update -qq
+
+install:
+  - sudo apt-get -qy install qt510-meta-minimal
+  # - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 
 script:
   - mkdir -p qt-creator-build
