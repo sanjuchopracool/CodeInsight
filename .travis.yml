@@ -87,7 +87,7 @@ before_script:
   - mkdir -p qt-creator-build
   - whereis qmake
   - cd qt-creator-build
-  - qmake ../qt-creator/qtcreator.pro
+  - qmake CONFIG += silent ../qt-creator/qtcreator.pro
 
 script:
   - make -j3
