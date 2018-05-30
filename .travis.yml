@@ -12,7 +12,8 @@ install:
 
 before_script:
   - 'export QMAKESPEC=linux-g++'
-  - '. /opt/qt510/bin/qt510-env.sh'
+  - QT_ENV_SCRIPT=$(find /opt -name 'qt*-env.sh')
+  - source $QT_ENV_SCRIPT
 
 
 script:
