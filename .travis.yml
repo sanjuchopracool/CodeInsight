@@ -2,72 +2,72 @@ language: cpp
 
 os:
   - linux
-  - osx
+  # - osx
 
 dist: trusty
 
 compiler:
-  - clang
+  # - clang
   - gcc
 
 env:
   matrix:
-    - QT=5  BREW=
-    - QT=5  BREW=ex   PPA=ubuntu-sdk-team/ppa
-    - QT=51 BREW=ex   PPA=beineri/opt-qt511-trusty
-    - QT=52 BREW=ex   PPA=beineri/opt-qt521-trusty
-    - QT=53 BREW=ex   PPA=beineri/opt-qt532-trusty
-    - QT=54 BREW=ex   PPA=beineri/opt-qt542-trusty
-    - QT=55 BREW=@5.5 PPA=beineri/opt-qt551-trusty
-    - QT=56 BREW=ex   PPA=beineri/opt-qt562-trusty
-    - QT=56 BREW=ex   PPA=beineri/opt-qt563-trusty
-    - QT=57 BREW=ex   PPA=beineri/opt-qt571-trusty
-    - QT=58 BREW=ex   PPA=beineri/opt-qt58-trusty
-    - QT=59 BREW=ex   PPA=beineri/opt-qt593-trusty
+    # - QT=5  BREW=
+    # - QT=5  BREW=ex   PPA=ubuntu-sdk-team/ppa
+    # - QT=51 BREW=ex   PPA=beineri/opt-qt511-trusty
+    # - QT=52 BREW=ex   PPA=beineri/opt-qt521-trusty
+    # - QT=53 BREW=ex   PPA=beineri/opt-qt532-trusty
+    # - QT=54 BREW=ex   PPA=beineri/opt-qt542-trusty
+    # - QT=55 BREW=@5.5 PPA=beineri/opt-qt551-trusty
+    # - QT=56 BREW=ex   PPA=beineri/opt-qt562-trusty
+    # - QT=56 BREW=ex   PPA=beineri/opt-qt563-trusty
+    # - QT=57 BREW=ex   PPA=beineri/opt-qt571-trusty
+    # - QT=58 BREW=ex   PPA=beineri/opt-qt58-trusty
+    # - QT=59 BREW=ex   PPA=beineri/opt-qt593-trusty
     - QT=510 BREW=@ex PPA=beineri/opt-qt-5.10.1-trusty
 
-matrix:
-  # Qt no longer supports GCC on OSX.
-  allow_failures:
-    - { os: osx, compiler: gcc, env: QT=5  BREW= }
-  exclude:
-    - { os: osx, env: QT=5  BREW=ex   PPA=ubuntu-sdk-team/ppa      }
-    - { os: osx, env: QT=51 BREW=ex   PPA=beineri/opt-qt511-trusty }
-    - { os: osx, env: QT=52 BREW=ex   PPA=beineri/opt-qt521-trusty }
-    - { os: osx, env: QT=53 BREW=ex   PPA=beineri/opt-qt532-trusty }
-    - { os: osx, env: QT=54 BREW=ex   PPA=beineri/opt-qt542-trusty }
-    - { os: osx, env: QT=56 BREW=ex   PPA=beineri/opt-qt562-trusty }
-    - { os: osx, env: QT=56 BREW=ex   PPA=beineri/opt-qt563-trusty }
-    - { os: osx, env: QT=57 BREW=ex   PPA=beineri/opt-qt571-trusty }
-    - { os: osx, env: QT=58 BREW=ex   PPA=beineri/opt-qt58-trusty  }
-    - { os: osx, env: QT=59 BREW=ex   PPA=beineri/opt-qt593-trusty }
-    - { os: osx, env: QT=510 BREW=@ex PPA=beineri/opt-qt-5.10.1-trusty }
+# matrix:
+#   # Qt no longer supports GCC on OSX.
+#   allow_failures:
+#     - { os: osx, compiler: gcc, env: QT=5  BREW= }
+#   exclude:
+#     - { os: osx, env: QT=5  BREW=ex   PPA=ubuntu-sdk-team/ppa      }
+#     - { os: osx, env: QT=51 BREW=ex   PPA=beineri/opt-qt511-trusty }
+#     - { os: osx, env: QT=52 BREW=ex   PPA=beineri/opt-qt521-trusty }
+#     - { os: osx, env: QT=53 BREW=ex   PPA=beineri/opt-qt532-trusty }
+#     - { os: osx, env: QT=54 BREW=ex   PPA=beineri/opt-qt542-trusty }
+#     - { os: osx, env: QT=56 BREW=ex   PPA=beineri/opt-qt562-trusty }
+#     - { os: osx, env: QT=56 BREW=ex   PPA=beineri/opt-qt563-trusty }
+#     - { os: osx, env: QT=57 BREW=ex   PPA=beineri/opt-qt571-trusty }
+#     - { os: osx, env: QT=58 BREW=ex   PPA=beineri/opt-qt58-trusty  }
+#     - { os: osx, env: QT=59 BREW=ex   PPA=beineri/opt-qt593-trusty }
+#     - { os: osx, env: QT=510 BREW=@ex PPA=beineri/opt-qt-5.10.1-trusty }
 
-addons:
-  coverity_scan:
-    project:
-      name: "pcolby/aws-sdk-qt"
-      description: "Build submitted via Travis CI"
-    notification_email: git@colby.id.au
-    build_command_prepend: >
-      cp -a "$TRAVIS_BUILD_DIR" "$TRAVIS_BUILD_DIR-scan" &&
-      pushd "$TRAVIS_BUILD_DIR-scan" &&
-      qmake -qt=qt5 -Wall -Wlogic -Wparser CONFIG+=debug_and_release
-    build_command: make all
-    branch_pattern: coverity
+# addons:
+#   coverity_scan:
+#     project:
+#       name: "pcolby/aws-sdk-qt"
+#       description: "Build submitted via Travis CI"
+#     notification_email: git@colby.id.au
+#     build_command_prepend: >
+#       cp -a "$TRAVIS_BUILD_DIR" "$TRAVIS_BUILD_DIR-scan" &&
+#       pushd "$TRAVIS_BUILD_DIR-scan" &&
+#       qmake -qt=qt5 -Wall -Wlogic -Wparser CONFIG+=debug_and_release
+#     build_command: make all
+#     branch_pattern: coverity
 
 before_install:
   - '[[ "$TRAVIS_OS_NAME" != linux || -z "$PPA" ]] || sudo add-apt-repository -y ppa:$PPA'
   - '[ "$TRAVIS_OS_NAME" != linux ] || sudo apt-get -qy update'
-  - '[ "$TRAVIS_OS_NAME" != osx   ] || brew update'
+  # - '[ "$TRAVIS_OS_NAME" != osx   ] || brew update'
 
 install:
-  - '[ "$TRAVIS_OS_NAME" != linux ] || sudo apt-get -qy install cppcheck doxygen graphviz lcov'
+  # - '[ "$TRAVIS_OS_NAME" != linux ] || sudo apt-get -qy install cppcheck doxygen graphviz lcov'
   - '[[ "$TRAVIS_OS_NAME" != linux || "$PPA" != */opt-* ]] || sudo apt-get -qy install qt${QT}base qt${QT}xmlpatterns'
   - '[[ "$TRAVIS_OS_NAME" != linux || "$PPA" == */opt-* ]] || sudo apt-get -qy install qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev'
   - '[ "$TRAVIS_OS_NAME" != linux ] || gem install lcoveralls'
-  - '[ "$TRAVIS_OS_NAME" != osx ] || brew install cppcheck doxygen graphviz qt$BREW'
-  - '[ "$TRAVIS_OS_NAME" != osx ] || brew link --force qt$BREW'
+  # - '[ "$TRAVIS_OS_NAME" != osx ] || brew install cppcheck doxygen graphviz qt$BREW'
+  # - '[ "$TRAVIS_OS_NAME" != osx ] || brew link --force qt$BREW'
   - qmake -v
 
 
