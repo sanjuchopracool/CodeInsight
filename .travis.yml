@@ -5,7 +5,7 @@ compiler: gcc
 before_install:
   - sudo add-apt-repository --yes ppa:beineri/opt-qt-5.10.1-trusty
   - sudo apt-get update -qq
-  # - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+  - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 
 install:
   - sudo apt-get -qy install qt5-qmake qtbase5-dev
