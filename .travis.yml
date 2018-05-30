@@ -54,7 +54,7 @@ install:
 
 before_script:
   - export QMAKESPEC=linux-g++
-  - '. /opt/qt$QT/bin/qt5-env.sh'
+  - '. /opt/qt5/bin/qt5-env.sh'
   - 'export QT_SELECT=qt5'
   - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   - git submodule update --init
