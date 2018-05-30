@@ -7,7 +7,7 @@ before_install:
   - sudo apt-get update -qq
 
 install:
-  - sudo apt-get -qy install qt510-default
+  - sudo apt-get -qy install qt510-default qt5-qmake
   - export QMAKE=/usr/lib/x86_64-linux-gnu/qt510/bin/qmake
 
 script:
