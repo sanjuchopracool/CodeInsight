@@ -10,6 +10,11 @@ before_install:
 install:
   - sudo apt-get -qy install qt5-qmake qtbase5-dev
 
+before_script:
+  - export QMAKESPEC=linux-g++'
+  - . /opt/qt510/bin/qt510-env.sh
+
+  
 script:
   - mkdir -p qt-creator-build
   - cd qt-creator-build
