@@ -14,6 +14,7 @@ script:
   - mkdir -p qt-creator-build
   - cd qt-creator-build
   - whereis qmake
+  - whereis qt5-qmake
   - echo $QMAKE
   - qmake ../qt-creator/qtcreator.pro
   - make all -j3
