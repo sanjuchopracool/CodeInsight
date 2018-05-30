@@ -13,5 +13,7 @@ install:
 script:
   - mkdir -p qt-creator-build
   - cd qt-creator-build
+  - whereis qmake
+  - echo $QMAKE
   - qmake ../qt-creator/qtcreator.pro
   - make all -j3
