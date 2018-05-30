@@ -13,10 +13,5 @@ install:
 script:
   - mkdir -p qt-creator-build
   - cd qt-creator-build
-  - whereis qmake
-  - whereis qt5-qmake
-  - qmake -v
-  - /usr/lib/x86_64-linux-gnu/qt5/bin/qmake -v
-  - /usr/lib/x86_64-linux-gnu/qt510/bin/qmake -v
-  - qmake ../qt-creator/qtcreator.pro
+  - $QMAKE ../qt-creator/qtcreator.pro
   - make all -j3
