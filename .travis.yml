@@ -8,7 +8,7 @@ before_install:
 
 install:
   - sudo apt-get -qy install qt510-default
-  # - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
+  - export QMAKE=/usr/lib/x86_64-linux-gnu/qt510/bin/qmake
 
 script:
   - mkdir -p qt-creator-build
