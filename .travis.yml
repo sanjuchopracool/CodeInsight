@@ -49,7 +49,7 @@ before_install:
   # - '[ "$TRAVIS_OS_NAME" != osx   ] || brew update'
 
 install:
-  - sudo apt-get -qy install qt${QT}base qt${QT}xmlpatterns qt${QT}declarative
+  # - sudo apt-get -qy install qt${QT}base qt${QT}xmlpatterns qt${QT}declarative
   - sudo apt-get -qy install qt5-qmake qtbase5-dev libqt5xmlpatterns5-dev
   - qmake -v
 
