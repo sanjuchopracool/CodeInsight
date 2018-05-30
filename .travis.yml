@@ -9,10 +9,7 @@ before_install:
   - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 
 script:
-  - echo "Creating qt-creator-build directory"
   - mkdir -p qt-creator-build
   - cd qt-creator-build
-  - echo "Running qmake"
   - qmake ../qt-creator/qtcreator.pro
-  - echo "Building qtcreator"
-  - make -j3
+  - make all -j3
