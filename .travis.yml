@@ -7,7 +7,7 @@ before_install:
   - sudo apt-get update -qq
 
 install:
-  - sudo apt-get -qy install qt510-meta-minimal
+  - sudo apt-get -qy install qt510-meta-full
   # - export QMAKE=/usr/lib/x86_64-linux-gnu/qt5/bin/qmake
 
 script:
