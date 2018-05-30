@@ -7,14 +7,13 @@ before_install:
   - sudo apt-get update -qq
 
 install:
-  - sudo apt-get -qy install qt5-qmake qtbase5-dev qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev
-  - export QMAKE=/usr/lib/x86_64-linux-gnu/qt510/bin/qmake
+  - sudo apt-get -qy install qt5-qmake qtbase5-dev
 
 script:
   - mkdir -p qt-creator-build
   - cd qt-creator-build
   - whereis qmake
   - whereis qt5-qmake
-  - echo $QMAKE
+  - qmake -v
   - qmake ../qt-creator/qtcreator.pro
   - make all -j3
