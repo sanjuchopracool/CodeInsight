@@ -43,8 +43,8 @@ before_script:
   - qmake "CONFIG+=silent" ../qt-creator/qtcreator.pro
 
 script:
-  - make -j3
+  - make -j7
   - mkdir -p build-Desktop-CodeInsight-Debug
   - cd build-Desktop-CodeInsight-Debug
   - qmake "CONFIG+=silent" ../CodeInsight/codeinsight.pro
-  - make -j3
+  - make -j7
