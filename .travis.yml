@@ -44,6 +44,7 @@ before_script:
 
 script:
   - make -j7
+  - cd ../
   - mkdir -p build-Desktop-CodeInsight-Debug
   - cd build-Desktop-CodeInsight-Debug
   - qmake "CONFIG+=silent" ../CodeInsight/codeinsight.pro
