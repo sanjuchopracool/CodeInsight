@@ -36,7 +36,7 @@ USE_USER_DESTDIR = yes
 ###### <dirname>_dependencies.pri, where <dirname> is the name of the directory containing the
 ###### plugin's sources.
 
-QTC_PLUGIN_NAME = CodeInsight
+QTC_PLUGIN_NAME = codeinsight
 QTC_LIB_DEPENDS += \
     # nothing here at this time
 
@@ -50,3 +50,6 @@ QTC_PLUGIN_RECOMMENDS += \
 ###### End _dependencies.pri contents ######
 
 include($$IDE_SOURCE_TREE/src/qtcreatorplugin.pri)
+
+DISTFILES += \
+    codeinsight.json.in
