@@ -4,13 +4,13 @@ DEFINES += CODEINSIGHT_LIBRARY
 
 SOURCES += \
         codeinsightplugin.cpp \
-    codeinsightcppeditorfactory.cpp
+    cppeditorfactory.cpp
 
 HEADERS += \
         codeinsightplugin.h \
         codeinsight_global.h \
         codeinsightconstants.h \
-    codeinsightcppeditorfactory.h
+    cppeditorfactory.h
 
 # Qt Creator linking
 

@@ -1,4 +1,4 @@
-#include "codeinsightcppeditorfactory.h"
+#include "cppeditorfactory.h"
 #include "codeinsightconstants.h"
 
 #include <cppeditor/cppeditorconstants.h>
@@ -11,7 +11,7 @@
 namespace CodeInsight {
 namespace Internal {
 
-CodeInsightCppEditorFactory::CodeInsightCppEditorFactory()
+CppEditorFactory::CppEditorFactory()
 {
     setId(Constants::CPPEDITOR_ID);
     setDisplayName(QCoreApplication::translate("OpenWith::Editors", Constants::CPPEDITOR_DISPLAY_NAME));
@@ -23,7 +23,7 @@ CodeInsightCppEditorFactory::CodeInsightCppEditorFactory()
                                                                 Core::Id(CppEditor::Constants::CPPEDITOR_ID)));
 }
 
-Core::IEditor *CodeInsightCppEditorFactory::createEditor()
+Core::IEditor *CppEditorFactory::createEditor()
 {
     Q_ASSERT(m_cppEditorFactory);
     if ( m_cppEditorFactory )

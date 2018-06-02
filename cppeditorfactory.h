@@ -5,12 +5,12 @@
 namespace CodeInsight {
 namespace Internal {
 
-class CodeInsightCppEditorFactory : public Core::IEditorFactory
+class CppEditorFactory : public Core::IEditorFactory
 {
     Q_OBJECT
 
 public:
-    CodeInsightCppEditorFactory();
+    CppEditorFactory();
 
     Core::IEditor* createEditor();
 

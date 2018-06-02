@@ -1,6 +1,6 @@
 #include "codeinsightplugin.h"
 #include "codeinsightconstants.h"
-#include "codeinsightcppeditorfactory.h"
+#include "cppeditorfactory.h"
 
 #include <coreplugin/icore.h>
 #include <coreplugin/icontext.h>
@@ -20,7 +20,7 @@ namespace Internal {
 class CodeInsightPluginPrivate : public QObject
 {
 public:
-    CodeInsightCppEditorFactory m_cppEditorFactory;
+    CppEditorFactory m_cppEditorFactory;
 };
 
 CodeInsightPlugin::CodeInsightPlugin()
