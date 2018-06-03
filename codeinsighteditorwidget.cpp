@@ -4,6 +4,7 @@
 
 #include <QHBoxLayout>
 #include <QPushButton>
+#include <QSplitter>
 
 namespace CodeInsight {
 namespace Internal {
@@ -12,9 +13,13 @@ CodeInsightEditorWidget::CodeInsightEditorWidget(Core::IEditor *editor)
 {
     m_button = new QPushButton;
 
+    QSplitter *splitter = new QSplitter(this);
+    splitter->addWidget(editor->widget());
+    splitter->addWidget(m_button);
+
     QHBoxLayout *layout = new QHBoxLayout;
-    layout->addWidget(editor->widget());
-    layout->addWidget(m_button);
+    layout->setMargin(0);
+    layout->addWidget(splitter);
     setLayout(layout);
 
     connect(editor->document(),

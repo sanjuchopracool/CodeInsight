@@ -4,7 +4,7 @@
 #include <QWidget>
 #include <coreplugin/editormanager/ieditor.h>
 
-class QPushButton;
+QT_FORWARD_DECLARE_CLASS(QPushButton)
 
 namespace CodeInsight {
 namespace Internal {

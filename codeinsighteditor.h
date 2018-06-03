@@ -17,7 +17,7 @@ public:
     virtual Core::IDocument *document() override;
 
     virtual QByteArray saveState() const override;
-    virtual bool restoreState(const QByteArray &state);
+    virtual bool restoreState(const QByteArray &state) override;
 
     virtual int currentLine() const override;
     virtual int currentColumn() const override;
@@ -26,7 +26,8 @@ public:
     virtual QWidget *toolBar() override;
 
 private:
-    Core::IEditor   *m_editor;
+    Core::IEditor *m_editor;
+    QWidget *m_editorWidget;
 };
 
 #endif // CODEINSIGHTEDITOR_H

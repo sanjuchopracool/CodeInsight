@@ -1,5 +1,7 @@
 #include "codeinsighteditor.h"
 
+#include "codeinsighteditorwidget.h"
+
 namespace CodeInsight {
 namespace Internal {
 
@@ -7,16 +9,18 @@ CodeInsightEditor::CodeInsightEditor(Core::IEditor *editor)
     : m_editor(editor)
 {
     setDuplicateSupported(false);
+    m_editorWidget = new CodeInsightEditorWidget(editor);
 
     // IContext
     setContext(m_editor->context());
-    setWidget(m_editor->widget());
+    setWidget(m_editorWidget);
     //    setContextHelpId(m_editor->contextHelpId());
 }
 
 CodeInsightEditor::~CodeInsightEditor()
 {
     delete m_editor;
+    delete m_editorWidget;
 }
 
 Core::IDocument *CodeInsightEditor::document()
