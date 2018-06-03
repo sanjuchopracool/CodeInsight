@@ -9,7 +9,7 @@
 *.dll
 *.dylib
 .DS_Store
-
+.directory
 # Qt-es
 object_script.*.Release
 object_script.*.Debug
